@@ -1,22 +1,31 @@
 .containerDiv{
     display: grid;
-    justify-content: center;
-    background: rgb(97, 97, 97);
-    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
     color:snow;
     font-size: large;
+    padding: 2%;
+}
+body{
+    background: gray;
 }
 .linkStyle{
     text-align: center;
-    text-decoration: none;
     color: snow;
+    
     transform: rotate(90);
-    background-color: blueviolet;
     font-size: medium;
     font-weight: bold;
 }
+.secondDiv{
+    background: black;
+    padding-left: 5%;
+    width: 110%;
+    height: 110%;
+
+}
 h2{
     text-align: center;
+    border-bottom: 1px solid red;
     color: red;
     text-decoration: double;
 }
