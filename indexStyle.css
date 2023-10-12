@@ -1,0 +1,22 @@
+.containerDiv{
+    display: grid;
+    justify-content: center;
+    background: rgb(97, 97, 97);
+    grid-template-columns: auto auto auto;
+    color:snow;
+    font-size: large;
+}
+.linkStyle{
+    text-align: center;
+    text-decoration: none;
+    color: snow;
+    transform: rotate(90);
+    background-color: blueviolet;
+    font-size: medium;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    color: red;
+    text-decoration: double;
+}
