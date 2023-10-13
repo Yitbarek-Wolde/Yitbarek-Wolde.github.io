@@ -7,36 +7,47 @@
 </head>
 <style>
     .div1{
-    display: grid;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: visible;
+    overflow-x: scroll;
     border: 1px solid black;
     padding: 10%; 
     margin: 5%;
     gap: 5%;
     }
-
-    div{
-        border: 3px solid;
-        text-align: center;
+    .gridcontain{
+        display: grid;
+        justify-content: space-evenly;
     }
 </style>
 <body>
+   
     <div class="div1">
-    <div>
-    <svg width="100" height="100">
-        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-      </svg>
+        <div>
+        <svg width="200" height="200" style="border: 2px soild black;">
+            <polygon points="100,20 180,150 30,150 " style="fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:1;"/>
+            <ellipse cx="102.7" cy="92" rx="40" ry="20" style="fill:rgb(251, 251, 249);stroke:rgb(0, 0, 0);stroke-width:2" />
+            <circle cx="102" cy="92" r="20" style="fill:rgb(48, 28, 28);stroke:rgb(0, 0, 0);stroke-width:2"/>
+            <circle cx="102" cy="92" r="10"/>
+        </svg>
     </div>
     <div>
-      <svg height="200" width="200">
-        <polygon points="50,0 150,0 200,50 200,150 150,200 50,200 0,150 0,50" style="fill:lime;stroke:purple;stroke-width:1" />
-      </svg>
-   </div>
+        <svg width="200" height="200" style="border: 2px soild black;">
+            <polygon points="0,0 200,0 200,200 0,200 " style="fill:rgb(0, 85, 255);stroke:purple;stroke-width:1;"/>
+        </svg>
+    </div>
+    
+   
    <div>
     <svg width="200" height="200">
-
+        <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:rgb(82, 109, 82);stroke:purple;stroke-width:1;"/>
     </svg>
    </div>
+
 </div>
+
+
+
 </body>
 </html>
