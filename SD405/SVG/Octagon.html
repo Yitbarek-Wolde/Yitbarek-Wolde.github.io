@@ -1,80 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-    .div1{
-    display: flex;
-    justify-content: flex-start;
-    overflow-y: visible;
-    overflow-x: scroll;
-    border: 1px solid black;
-    padding: 10%; 
-    margin: 5%;
-    gap: 5%;
+    .div1 {
+        display: flex;
+        justify-content: flex-start;
+        overflow-y: visible;
+        overflow-x: scroll;
+        border: 1px solid black;
+        padding: 10%;
+        margin: 5%;
+        gap: 5%;
     }
-    .gridcontain{
+
+    .gridcontain {
         display: grid;
         justify-content: space-evenly;
     }
-    h3{
+
+    h3 {
         text-align: center;
     }
 </style>
+
 <body>
-   
+    <h1 align="center">Scroll to see =></h1>
     <div class="div1">
         <div>
             <h3>Pramid with eye</h3>
-        <svg width="200" height="200" style="border: 2px soild black;">
-            <polygon points="100,20 180,150 30,150 " style="fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:1;"/>
-            <ellipse cx="102.7" cy="92" rx="40" ry="20" style="fill:rgb(251, 251, 249);stroke:rgb(0, 0, 0);stroke-width:2" />
-            <circle cx="102" cy="92" r="20" style="fill:rgb(48, 28, 28);stroke:rgb(0, 0, 0);stroke-width:2"/>
-            <circle cx="102" cy="92" r="10"/>
-        </svg>
+            <svg width="200" height="200" style="border: 2px soild black;">
+                <polygon points="100,20 180,150 30,150 "
+                    style="fill:rgb(0, 0, 0);stroke:rgb(0, 0, 0);stroke-width:1;" />
+                <ellipse cx="102.7" cy="92" rx="40" ry="20"
+                    style="fill:rgb(251, 251, 249);stroke:rgb(0, 0, 0);stroke-width:2" />
+                <circle cx="102" cy="92" r="20" style="fill:rgb(48, 28, 28);stroke:rgb(0, 0, 0);stroke-width:2" />
+                <circle cx="102" cy="92" r="10" />
+            </svg>
+        </div>
+        <div>
+            <h3>Mickey Mouse</h3>
+            <svg width="200" height="200">
+                <circle cx="100" cy="100" r="40" fill="darkbrown" />
+                <circle cx="110" cy="85" r="10" fill="white" />
+                <circle cx="110" cy="85" r="5" />
+                <circle cx="119" cy="55" r="20" />
+                <circle cx="85" cy="85" r="10" fill="white" />
+                <circle cx="85" cy="85" r="5" />
+                <circle cx="70" cy="58" r="20" />
+                <ellipse cx="100" cy="123" rx="15" ry="5" fill="red" />
+            </svg>
+        </div>
+
+        <div>
+            <h3>Star</h3>
+            <svg width="200" height="200">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                    style="fill:rgb(238, 255, 0);stroke:purple;stroke-width:1;" />
+            </svg>
+        </div>
+        <div>
+            <h3>Blue Sqaure</h3>
+            <svg width="200" height="200" style="border: 2px soild black;">
+                <polygon points="0,0 200,0 200,200 0,200 " style="fill:rgb(0, 85, 255);stroke:purple;stroke-width:1;" />
+            </svg>
+        </div>
+
     </div>
-    <div>
-        <h3>Mickey Mouse</h3>
-        <svg width="200" height="200">
-            <circle cx="100" cy="100" r="40" fill="darkbrown"/>
-            <circle cx="110" cy="85" r="10" fill="white"/>
-            <circle cx="110" cy="85" r="5"/>
-            <circle cx="119" cy="55" r="20"/>
-            <circle cx="85" cy="85" r="10" fill="white"/>
-            <circle cx="85" cy="85" r="5"/>
-            <circle cx="70" cy="58" r="20"/>
-            <ellipse cx="100" cy="123" rx="15" ry="5" fill="red"/>
-        </svg>
-    </div>
-    
-   <div>
-    <h3>Star</h3>
-    <svg width="200" height="200">
-        <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:rgb(238, 255, 0);stroke:purple;stroke-width:1;"/>
-    </svg>
-   </div>
-   <div>
-    <h3>Blue Sqaure</h3>
-    <svg width="200" height="200" style="border: 2px soild black;">
-        <polygon points="0,0 200,0 200,200 0,200 " style="fill:rgb(0, 85, 255);stroke:purple;stroke-width:1;"/>
-    </svg>
-</div>
-
-
-   <div>
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="40" fill="#000000"/>
-            <circle cx="35" cy="35" r="10" fill="#ffffff"/>
-            <circle cx="65" cy="35" r="10" fill="#ffffff"/>
-            <path d="M50 60 C60 70, 40 70, 50 60" stroke="#ffffff" stroke-width="5" fill="none"/>
-    </svg>
-  </div>
-  
-</div>
-
-
+   
 </body>
+
 </html>
