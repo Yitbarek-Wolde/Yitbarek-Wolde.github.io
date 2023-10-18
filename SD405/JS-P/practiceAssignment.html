@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+ function clickMe(){
+    let inputBox = document.querySelector('input');
+    inputBox
+
+    let lebelChange = document.querySelector('lable'); // universal selector of tags, id and class
+    lebelChange.innerHTML = "Edited Skill"
+ }
+    function createEl(){
+        let myDIV = document.createElement('div') // this line creates the div tag and put in in my div variable
+        myDIV.innerHTML="Created Div"; // this line adds content inside the div like "<div> created div </div>"
+        document.body.append(myDIV); // this line will append(literally add what we created so far) in the body tag of the html
+
+        let inputText = document.createElement('input')
+        inputText.value="created from input"
+
+    }
+</script>
+<body>
+    <div>My Div</div>
+    <label> Skill </label>
+    <input type="checkbox" name="nameChange">
+    <hr>
+    <textarea>TEXT Area</textarea>
+    <img src="" style="width: 100px; height: 100px;">
+    <p>something something</p>
+    <a href="https://www.google.com">My link</a>
+    <button onclick="clickMe()">Click</button>
+</body>
+</html>
