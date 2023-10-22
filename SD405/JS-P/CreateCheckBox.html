@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yitbarek-codehub</title>
+</head>
+<script>
+    window.onload = function (){
+        let f = ["tomato", 'onino', 'stag']
+       
+        for(let a in f){ 
+            let checkbox = document.createElement('input');
+            let checklabel = document.createElement('label')
+            checklabel.innerHTML = f[a];
+            checkbox.type = 'checkbox';
+            checkbox.name = 'myCheckbox';
+            checkbox.value = f[a];
+            checkbox.id = 'myCheckboxId';
+            document.body.append(checklabel);
+            document.body.append(checkbox);
+        }
+    }
+</script>
+<body>
+    
+</body>
+</html>
