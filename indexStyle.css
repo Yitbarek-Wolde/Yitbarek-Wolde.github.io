@@ -7,11 +7,12 @@
 }
 
 body {
-    background: gray;
+    background: rgb(0, 0, 0);
 }
 
 .linkStyle {
     text-align: center;
+    text-decoration: none;
     color: snow;
     transform: rotate(90);
     font-size: medium;

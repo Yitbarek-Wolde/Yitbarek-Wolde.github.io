@@ -7,10 +7,11 @@
 }
 
 body {
-    background: gray;
+    background: rgb(0, 0, 0);
 }
 
 .linkStyle {
+    text-decoration: none;
     text-align: center;
     color: snow;
     transform: rotate(90);
