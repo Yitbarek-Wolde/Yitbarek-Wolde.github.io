@@ -1,0 +1,33 @@
+.containerDiv {
+    display: grid;
+    justify-content: space-evenly;
+    color: snow;
+    font-size: large;
+    padding: 2%;
+}
+
+body {
+    background: rgb(0, 0, 0);
+}
+
+.linkStyle {
+    text-align: center;
+    text-decoration: none;
+    color: snow;
+    transform: rotate(90);
+    font-size: medium;
+    font-weight: bold;
+}
+
+.secondDiv {
+    padding-left: 5%;
+    width: 110%;
+    height: 110%;
+}
+
+h2 {
+    text-align: center;
+    border-bottom: 1px solid red;
+    color: red;
+    text-decoration: double;
+}
