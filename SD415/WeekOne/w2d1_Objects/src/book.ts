@@ -114,8 +114,11 @@ export function scramble(): void {
 
     let textArea: HTMLInputElement | null = document.getElementById("displayArea") as HTMLInputElement | null;
     if (textArea) {
-        for (let i = 0; i < sameLengthArr.length; i++)
-           textArea.innerHTML = sameLengthArr[i].join(' ');
+        textArea.innerHTML = sameLengthArr.join(' ');
+        textArea.innerHTML += "\n";
+        for (let i = 0; i < sameLengthArr.length; i++) {
+            textArea.innerHTML += sameLengthArr[i] + " ";
+        }
     }
 
 }
