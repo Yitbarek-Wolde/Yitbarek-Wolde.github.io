@@ -92,13 +92,12 @@ export function scramble() {
     let newString = titles.join(" ");
     titleString = newString.split(' ');
     let sorted = titleString.sort((a, b) => a.length - b.length);
-    const sameLengthArr = sorted.filter((el, _, arr) => el.length === arr[0].length);
     let textArea = document.getElementById("displayArea");
     if (textArea) {
-        textArea.innerHTML = sameLengthArr.join(' ');
-        textArea.innerHTML += "\n";
-        for (let i = 0; i < sameLengthArr.length; i++) {
-            textArea.innerHTML += sameLengthArr[i] + " ";
+        for (let i = 0; i < sorted.length; i++) {
+            let sameLengthArr = sorted.filter((el, _, arr) => el.length === arr[i].length);
+            textArea.innerHTML += sameLengthArr[i].join(' ');
+            textArea.innerHTML += "\n";
         }
     }
 }
