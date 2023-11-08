@@ -1,6 +1,6 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai"
-import {double, times100, myMap} from "../src/fnExps.js";
+import {double, times100, myMap, e} from "../src/fnExps.js";
 // import {double} from "../src/fnExps.js";
 
 /* 1.	1.	Write a function, double, that takes a number and returns 2 times the number..  */
@@ -51,4 +51,16 @@ describe("times100", function () {
             assert.deepStrictEqual(myMap(testArray,(x:number) => x * 3), [-30, 0, 30, 60]);
         });
     });
+
+    describe("e", function () {
+        const testtheArray = [[1,2,3],[3,4,5],[5,6,7]]
+        const testtheArray2 = [[1,2],[4,5],[5,6,7,8]]
+           it("tests e function", function () {
+            assert.strictEqual(e(testtheArray), [[2],[4],[6]]);
+        });
+        it("tests e function", function () {
+            assert.strictEqual(e(testtheArray2), [[2],[4],[6,8]]);
+        });
+    });
+
 

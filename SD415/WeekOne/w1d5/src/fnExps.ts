@@ -26,7 +26,16 @@ export function myMap(arr: number[], myfun: any): number[] {
   return newarr;
 }
 
-
+export function e(array:number[][]):number[][]{
+  let newarray:number[][]=[];
+  for(let i=0;i<array.length;i++){
+    for(let x=0;x<array[i].length; x++){
+      if(array[i][x]%2==0){
+        newarray[i].push(array[i][x])}
+    }
+  }
+  return newarray
+}
 
 
 
