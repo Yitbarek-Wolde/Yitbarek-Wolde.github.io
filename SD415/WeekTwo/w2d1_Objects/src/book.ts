@@ -109,15 +109,16 @@ export function scramble(): void {
     let newString = titles.join(" ")
     titleString = newString.split(' ')
     let sorted = titleString.sort((a, b) => a.length - b.length)
-
+    let collect = ''
+ for (let i = 0; i < sorted.length; i++) {
+            let sameLengthArr = sorted.filter((el, _, arr) => el.length === arr[i].length);
+            collect += sameLengthArr[i].join(' ');
+            collect += "\n";
+        }
 
     let textArea: HTMLInputElement | null = document.getElementById("displayArea") as HTMLInputElement | null;
-    if (textArea) {
-        for (let i = 0; i < sorted.length; i++) {
-            let sameLengthArr = sorted.filter((el, _, arr) => el.length === arr[i].length);
-            textArea.innerHTML += sameLengthArr[i].join(' ');
-            textArea.innerHTML += "\n";
-        }
+    if (textArea) { textArea.innerHTML = collect
+       
     }
 
 }
