@@ -95,6 +95,7 @@ export function scramble() {
     const sameLengthArr = sorted.filter((el, _, arr) => el.length === arr[0].length);
     let textArea = document.getElementById("displayArea");
     if (textArea) {
-        textArea.innerHTML = sameLengthArr.join(' ');
+        for (let i = 0; i < sameLengthArr.length; i++)
+            textArea.innerHTML = sameLengthArr[i].join(' ');
     }
 }
