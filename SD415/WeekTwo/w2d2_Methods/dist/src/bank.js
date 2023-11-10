@@ -1,0 +1,68 @@
+/*
+21.	Create bank object, bank, with methods:
+a.	debit(id, amount) , adds negative amount to customer transaction list, but only if the amount is greater than the current balance.
+b.	credit(id, amount), adds positive amount to customer transaction list
+c.	getBalance(id) returns current balance of that customer.  The balance should be computed as the sum of all recorded transaction amounts.
+d.  saveTransaction(id, amount) saves this transaction amount to the customerTransactions list for this customer
+e.	getBankBalance:  returns sum of all customer balances
+The bank object should have a transactionsDB property, which will be an array of objects containing all of the customer objects.
+  Customer objects will have properties customerId and customerTransactions, e.g.,
+{customerId: 1234, customerTransactions: [10, 50, -40] } would be one element of the array.
+Add any necessary types to the above bank object.
+*/
+export const bank = {}; //define bank object as type Bank
+bank.transactionsDB = [
+    { customerId: 1, customerTransactions: [10, 50, -40] },
+    { customerId: 2, customerTransactions: [10, 10, -10] },
+    { customerId: 3, customerTransactions: [5, -5, 55] }
+];
+/* this is complete, no need to modify.
+Saves this amount to the customerTransactions array for customerId id. */
+bank.saveTransaction = function (customerId, amount) {
+    const customer = bank.transactionsDB.find(customer => customer.customerId === customerId);
+    if (customer) {
+        customer.customerTransactions.push(amount);
+    }
+};
+bank.debit = function (customerId, amount) {
+    const customer = bank.transactionsDB.find(customer => customer.customerId === customerId);
+    if (customer) {
+        let added = 0;
+        customer.customerTransactions.forEach((num) => {
+            added += num;
+        });
+        if (added > amount) {
+            customer.customerTransactions.push(-amount);
+        }
+    }
+};
+bank.getBalance = function (customerId) {
+    const customer = bank.transactionsDB.find(customer => customer.customerId === customerId);
+    let added = 0;
+    if (customer) {
+        customer.customerTransactions.forEach((num) => {
+            added += num;
+        });
+    }
+    return added;
+};
+bank.bankBalance = function () {
+    const allBalance = bank.transactionsDB.find(allBalance => allBalance.customerTransactions);
+    let added = 0;
+    let total = 0;
+    if (allBalance) {
+        for (const allBalance of bank.transactionsDB) {
+            allBalance.customerTransactions.forEach((num) => {
+                added += num;
+            });
+        }
+        total += added;
+    }
+    return added;
+};
+bank.credit = function (customerId, amount) {
+    const customer = bank.transactionsDB.find(customer => customer.customerId === customerId);
+    if (customer) {
+        customer.customerTransactions.push(amount);
+    }
+};
