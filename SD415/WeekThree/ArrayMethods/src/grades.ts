@@ -17,7 +17,7 @@ type Key = Answer[];
 
 type Quiz = {
     students: Student[],
-    key: Key, 
+    key: Key,
     answerComparator: (ans1: Answer, ans2: Answer) => number,
     scoreStudent: (sid: number) => number,
     getAverage: () => number
@@ -34,8 +34,9 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @param {Object} ans2 is an answer object 
  * @returns {number} difference of the identifiers
  */
-function answerComparator(ans1, ans2) {
-//IMPLEMENT THIS
+function answerComparator(ans1: Answer, ans2: Answer): number {
+    //IMPLEMENT THIS
+    return ans1.qid - ans2.qid
 }
 
 /**
@@ -46,17 +47,32 @@ function answerComparator(ans1, ans2) {
  * sort the student answers
  * compare them against key and add up matches
  */
-quiz.scoreStudent = function (sid) {
-//IMPLEMENT THIS
+quiz.scoreStudent = function (sid): number {
+    //IMPLEMENT THIS
+    let StId = quiz.students.find((findID) => findID.sid === sid)
+    if (!StId)
+        return 0
+    let answerOfStudent = StId.answers.sort(answerComparator)
+    let score = answerOfStudent.reduce((acc, curr, i) => {
+        const studentAnswer = curr.ans;
+        const correctAnswer = quiz.key[i].ans;
+        if (studentAnswer === correctAnswer) {
+            return acc + 1;
+        } else {
+            return acc;
+        }
+    }, 0);
+    return score;
+
 };
 
 /**
  * @returns {number} average score of all students
  * go through list of students and get score of each, then the average
  */
-quiz.getAverage = function(){
-//IMPLEMENT THIS
-
+quiz.getAverage = function () {
+    //IMPLEMENT THIS
+    const score = quiz.students.reduce((sum, student) => sum + quiz.scoreStudent(student.sid), 0);
+    return score / quiz.students.length;
 };
-
 

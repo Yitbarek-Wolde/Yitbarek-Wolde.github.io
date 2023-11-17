@@ -4,8 +4,8 @@ Write a function filterRange(arr, a, b) that gets an array arr, looks for elemen
 The function should not modify the array. It should return the new array.
 */
 export function filterRange(arr: number[], a: number, b: number): number[] {
-
-    return [];
+    let result = arr.filter((num) => num >= a && num < b)
+    return result;
 }
 
 /*
@@ -13,7 +13,7 @@ Write a function filterRangeInPlace(arr, a, b) that gets an array arr and remove
 The function should only modify the array. It should not return anything.
 */
 export function filterRangeInPlace(arr: number[], a: number, b: number): void {
-
+    arr.splice(0, arr.length, ...arr.filter(item => (a <= item) && (item <= b)));
 }
 
 type Calculator = {
@@ -27,16 +27,27 @@ export const calculator: Calculator = {
         "-": (a, b) => a - b,
         "+": (a, b) => a + b,
     },
-
+    calculate: function (str: string): number {
+        let calArr = str.split(' ')
+        let [a, operator, b] = calArr
+        let A = parseInt(a)
+        let B = parseInt(b)
+        return this.methods[operator](A, B)
+    },
+    addMethod: function (nameOf: string, fun: (a: number, b: number) => number): void {
+        this.methods[nameOf] = fun;
+    }
 
 }
 
 export function unique(arr: string[]): string[] {
-
-    return [];
+    let newName = arr.filter((elem, index, filarr) => {
+        return filarr.indexOf(elem) === index;
+    })
+    return newName
 }
 
-export type User ={
+export type User = {
     id: string;
     name: string;
     age: number;
@@ -44,9 +55,10 @@ export type User ={
 
 export function groupById(users: User[]): { [key: string]: User } {
     // declare usersById to be an object with string keys and User values
-    const usersById: { [key: string]: User } = {};  
-    // FURTHER IMPLEMENTATION REQUIRED HERE
-
+    const usersById: {[key: string]: User } = users.reduce((acc:any, item)  =>  {
+        acc[item.id.toString()]= item 
+        return acc},{} 
+        )
 
     return usersById;
 }
@@ -60,33 +72,35 @@ type SurnameUser = {
 type FullNameUser = {
     fullName: string;
     id: number;
-}   
+}
 
 
 export function map2fullName(users: SurnameUser[]): FullNameUser[] {
-    let result: { fullName: string, id: number }[] = [];
+    let result: { fullName: string, id: number }[] =  users.map(items => {
+       return {fullName: items.name + ' ' + items.surname, id: items.id}
+    })
     // FURTHER IMPLEMENTATION REQUIRED HERE
-
-
 
     return result;
 }
 
 
-export function sortByAge(users: User[]  ): void {
+export function sortByAge(users: User[]): void {
     // FURTHER IMPLEMENTATION REQUIRED HERE
-  }
+    users.sort((a, b) => a.age - b.age);
+}
 
 export function findOldest(users: User[]): User {
-    let oldest = users[0];
+   
     // FURTHER IMPLEMENTATION REQUIRED HERE
-
-
+  
+    let oldest = users.reduce((oldest, current) => (current.age > oldest.age ? current : oldest), users[0]);
 
     return oldest;
 }
 
 /* getAverageAge using reduce */
 export function getAverageAge(users: User[]): number {
-    return 0;
+   let result=users.reduce((sum,num)=>sum+=num.age,0)
+    return result / (users.length);
 }
