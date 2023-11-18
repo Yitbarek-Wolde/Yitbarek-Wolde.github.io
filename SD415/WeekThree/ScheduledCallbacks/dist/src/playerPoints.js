@@ -9,27 +9,15 @@ export function findTotalPlayerPoints(player3) {
     return SumTotal;
 }
 export function findTotalPointsByJersey(num) {
-    let SumTotalbyJersey = 0;
-    for (let players of teamStats) {
-        if (num === players.jersey) {
-            let OverallPoints = players.stats.map((results) => results.points);
-            SumTotalbyJersey = OverallPoints.reduce((sum, point) => sum += point);
-        }
+    const player = teamStats.find((player) => player.jersey === num);
+    if (!player) {
+        return 0;
     }
-    return SumTotalbyJersey;
+    return player.stats.reduce((sum, { points }) => sum + points, 0);
 }
 export function findTotalScores(teamStats) {
-    let result = [];
-    //looping through the players
-    for (let elements of teamStats) {
-        let eachElement = elements.stats;
-        let jersey = elements.jersey;
-        //map points for each player
-        let PlayerPoints = eachElement.map((statPoints) => statPoints.points);
-        //calculating the total points for each player
-        let totalPoints = PlayerPoints.reduce((pointSum, points) => pointSum += points, 0);
-        //adding result to the array
-        result.push({ jersey: jersey, total: totalPoints });
-    }
-    return result;
+    return teamStats.map(({ jersey, stats }) => ({
+        jersey,
+        total: stats.reduce((sum, { points }) => sum + points, 0),
+    }));
 }
