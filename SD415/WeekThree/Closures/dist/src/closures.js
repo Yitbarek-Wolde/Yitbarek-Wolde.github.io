@@ -19,12 +19,5 @@ export function inBetween(low, high) {
  * @returns {Function} closure that returns it's number
  */
 export function makeArmy() {
-    let shooters = [];
-    for (let i = 0; i < 10; i++) {
-        let shooter = function () {
-            return i;
-        };
-        shooters.push(shooter);
-    }
-    return shooters;
+    return [...Array(10)].map((_, i) => () => i);
 }

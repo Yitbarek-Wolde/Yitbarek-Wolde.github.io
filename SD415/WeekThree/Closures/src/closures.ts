@@ -21,12 +21,5 @@ export function inArray(arr: number[]): (num: number) => boolean {
    * @returns {Function} closure that returns it's number
    */
   export function makeArmy(): (() => number)[] {
-    let shooters: (() => number)[] = [];
-    for (let i = 0; i < 10; i++) {
-      let shooter = function () {
-        return i;
-      };
-      shooters.push(shooter);
-    }
-    return shooters;
+    return [...Array(10)].map((_, i) => () => i);
   }
