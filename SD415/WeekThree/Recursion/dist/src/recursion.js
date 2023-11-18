@@ -1,34 +1,31 @@
-
-export function sumTo(n: number): number {
-    if (n == 1) return 1;
+export function sumTo(n) {
+    if (n == 1)
+        return 1;
     return n + sumTo(n - 1);
 }
-
-export function factorial(n: number): number {
+export function factorial(n) {
     if (n < 1)
-        return 1
+        return 1;
     else
         return n * factorial(n - 1);
 }
-
-export function fibonacci(n: number): number {
+export function fibonacci(n) {
     if (n <= 1)
-        return n
+        return n;
     else
         return fibonacci(n - 1) + fibonacci(n - 2);
 }
-
-export function outputList(list: TreeNode): string {
+export function outputList(list) {
     if (list.next === null) {
-        return list.value + ' printed to console'
-    } else {
+        return list.value + ' printed to console';
+    }
+    else {
         return list.value + ' ' + outputList(list.next);
     }
 }
-
-export function outputListLoop(list: TreeNode): string {
+export function outputListLoop(list) {
     let arr = [];
-    let node: TreeNode | null = list;
+    let node = list;
     while (node) {
         arr.push(node.value);
         node = node.next;
@@ -39,18 +36,18 @@ export function outputListLoop(list: TreeNode): string {
     }
     return result + 'printed to console';
 }
-
-export function reverseList(list: TreeNode): string {
+export function reverseList(list) {
     if (list.next === null) {
         return `${list.value}`;
-    } else {
+    }
+    else {
         if (list.value != 1) {
             let result = reverseList(list.next) + ' ' + list.value;
             return result;
         }
         else {
             let result = reverseList(list.next) + ' ' + list.value + ' printed to console';
-            return result
+            return result;
         }
     }
 }
@@ -59,14 +56,12 @@ export function reverseList(list: TreeNode): string {
 //         return  "printed to console " +list.value 
 //     } else {
 //         let a = reverseList(list.next)+ ' ' + list.value;
-
 //         return a + ' printed to console'
 //     }
 // }
-
-export function reverseListLoop(list: TreeNode): string {
+export function reverseListLoop(list) {
     let arr = [];
-    let node: TreeNode | null = list;
+    let node = list;
     while (node) {
         arr.push(node.value);
         node = node.next;
@@ -77,7 +72,7 @@ export function reverseListLoop(list: TreeNode): string {
     }
     return result + 'printed to console';
 }
-export function sumTreeValues(list: binaryTreeType|any): number {
+export function sumTreeValues(list) {
     let add = 0;
     if (list.right === null && list.left === null) {
         return add += list.value;
@@ -89,35 +84,7 @@ export function sumTreeValues(list: binaryTreeType|any): number {
         return add += list.value + sumTreeValues(list.right);
     }
     else {
-        add += list.value + sumTreeValues(list.left) + sumTreeValues(list.right)
+        add += list.value + sumTreeValues(list.left) + sumTreeValues(list.right);
         return add;
     }
-}
-// export function sumTreeValues(list: binaryTreeType): number | string {
-//    let add = 0;
-//     if (list.right == null && list.left == null) {
-//         return add += list.value;
-//     }
-//     else if (list.right == null) {
-//         return add += list.value + sumTreeValues(list.left);
-//     }
-//     else if (list.left == null) {
-//         return add += list.value + sumTreeValues(list.right);
-//     }
-//     else {
-//         add += list.value + sumTreeValues(list.left) + sumTreeValues(list.right);
-//         return add;
-//     }
-// }
-
-
-export type binaryTreeType = {
-    value: number;
-    left: binaryTreeType | null;
-    right: binaryTreeType | null;
-
-}
-export type TreeNode = {
-    value: number;
-    next: TreeNode | null;
 }

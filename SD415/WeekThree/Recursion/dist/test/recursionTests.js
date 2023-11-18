@@ -1,8 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
-import { assert } from "chai";
-import { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, sumTreeValues, TreeNode} from "../src/recursion.js";
-
-let list: TreeNode = {
+//import { assert } from "chai";
+import { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, sumTreeValues } from "../src/recursion.js";
+let list = {
     value: 1,
     next: {
         value: 2,
@@ -15,8 +14,6 @@ let list: TreeNode = {
         }
     }
 };
-
-
 describe("recursion tests", function () {
     it("tests summing by recursion", function () {
         assert.strictEqual(sumTo(5), 15);
@@ -45,14 +42,12 @@ describe("recursion tests", function () {
         assert.strictEqual(reverseListLoop(list), "4 3 2 1 printed to console");
     });
 });
-
 describe("binary tree recursion", function () {
     const tn3 = { value: 3, left: null, right: null };
     const tn5 = { value: 5, left: null, right: null };
     const tn4 = { value: 4, left: null, right: null };
     const tn2 = { value: 2, left: tn4, right: tn5 };
     const binaryTree = { value: 1, left: tn2, right: tn3 };
-    
     it("tests sum values of binary tree", function () {
         assert.strictEqual(sumTreeValues(binaryTree), 15);
     });
